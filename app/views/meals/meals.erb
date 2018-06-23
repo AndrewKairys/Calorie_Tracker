@@ -1,0 +1,14 @@
+<h1> Meals </h1>
+
+<% if !@meals %>
+  <a href="/meals/create_meal">
+    Create your first meal!
+  </a>
+<% else %>
+<% @meals.each do |meal| %>
+  <div>
+    <%= meal.name %>
+    <%= meal.calories %>
+  </div>
+<% end %>
+<% end %>
