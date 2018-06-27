@@ -7,8 +7,10 @@
 <% else %>
 <% @meals.each do |meal| %>
   <div>
-    <%= meal.name %>
-    <%= meal.calories %>
+    <a href="meals/<%= meal.id %>"><%= meal.name %></a>: <%= meal.calories %> kcals
   </div>
-<% end %>
+  <% end %>
+  <div>
+    Total Calories: <%=@current_user.meals.pluck(:calories).sum%> kcals
+  </div>
 <% end %>
