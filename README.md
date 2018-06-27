@@ -1,6 +1,6 @@
 # Project Title
 
-A simple Web App to track daily caloric input.  
+A simple Web App to track daily caloric intake.  
 
 
 ### Installing
