@@ -57,10 +57,10 @@ class MealsController < ApplicationController
 
   patch '/meals/:id' do
     if logged_in?
-      if params[:name] == ""
+      if !params[:calories]
         redirect to "/meals/#{params[:id]}/edit"
       else
-        @meal = meal.find_by_id(params[:id])
+        @meal = Meal.find_by_id(params[:id])
         if @meal && @meal.user == current_user
           if @meal.update(name: params[:name], calories: params[:calories])
             redirect to "/meals/#{@meal.id}"
