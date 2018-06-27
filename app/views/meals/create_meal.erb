@@ -1,7 +1,7 @@
 <h2>Add a Meal</h2>
 
 <form action="/meals" method="POST">
-  <p>Name of meal: <input type="text" name="name" pattern="[a-zA-Z]"></p>
+  <p>Name of meal: <input type="text" name="name" pattern="^[a-zA-Z]+$"></p>
   <p>Calories: <input type="number" step="50" name="calories" pattern="[0-9]"></p>
   <input class="btn btn-primary" type="submit" value="submit">
 </form>
