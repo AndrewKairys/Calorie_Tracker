@@ -13,4 +13,9 @@
   <div>
     Total Calories: <%=@current_user.meals.pluck(:calories).sum%> kcals
   </div>
+
+  <form method="POST" action="/meals/delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete All Meals">
+  </form>
 <% end %>
