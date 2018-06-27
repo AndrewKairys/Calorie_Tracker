@@ -106,7 +106,7 @@
     <ul>
       <% if logged_in? %>
         <li>
-          <a>
+          <a href="/">
             <% calories_left = (@current_user.daily_calories) - @current_user.meals.pluck(:calories).sum %>
             <%= @current_user.username %>, you have <%= calories_left %>kcal left for today
           </a>
