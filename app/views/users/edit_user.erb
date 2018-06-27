@@ -1,8 +1,0 @@
-<h2> Edit <%= @current_user.name %> </h2>
-
-<form method="POST" action="/users/<%=@current_user.id%>">
-  <input type="hidden" name="_method" value="PATCH">
-  <input type="text" name="name" value="<%= @current_user.username %>" pattern="[a-zA-Z]">
-  <input type="number" name="calories" value="<%= @current_user.daily_calories %>" pattern="[0-9]">
-  <input type="submit" value="submit">
-</form>
