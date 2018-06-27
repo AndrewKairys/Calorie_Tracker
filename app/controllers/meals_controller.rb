@@ -34,7 +34,7 @@ class MealsController < ApplicationController
   end
 
   get '/meals/:id' do
-    if logged_in?
+    if logged_in? && @current_user.id == Meal.find_by_id(params[:id]).user_id
       @meal = Meal.find_by_id(params[:id])
       erb :'meals/show_meal'
     else
