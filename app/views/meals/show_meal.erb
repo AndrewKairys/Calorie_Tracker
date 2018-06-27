@@ -1,8 +1,9 @@
-<h2><%= @meal.name%>: <%=@meal.calories%>kcal</h2>
+<h2><%= @meal.name %>:</h2>
+</h2><%=@meal.calories%>kcal</h2>
 
 <form method="POST" action="/meals/<%=@meal.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Meal">
 </form>
 
-<a href="/meals/<%=@meal.id%>/edit">Edit meal </a>
+<a href="/meals/<%=@meal.id%>/edit">Edit Meal </a>
