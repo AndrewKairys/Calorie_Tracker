@@ -33,6 +33,15 @@ class MealsController < ApplicationController
     end
   end
 
+  delete '/meals/delete' do
+    if logged_in?
+      @current_user.meals.each { |meal| meal.destroy }
+      erb :'meals/meals'
+    else
+      redirect to '/login'
+    end
+  end
+
   get '/meals/:id' do
     if logged_in? && @current_user.id == Meal.find_by_id(params[:id]).user_id
       @meal = Meal.find_by_id(params[:id])
@@ -80,11 +89,12 @@ class MealsController < ApplicationController
     if logged_in?
       @meal = Meal.find_by_id(params[:id])
       if @meal && @meal.user == current_user
-        @meal.delete
+        @meal.destroy
       end
       redirect to '/meals'
     else
       redirect to '/login'
     end
   end
+
 end
