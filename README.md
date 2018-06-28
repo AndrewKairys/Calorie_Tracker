@@ -5,7 +5,7 @@ A simple Web App to track daily caloric intake.
 
 ### Installing
 
-To use this app, just clone down, run rake db:migrate, and then run shotgun. Everything should be set up.
+To use this app, just clone down, run bundle, rake db:migrate, and then run shotgun. Everything should be set up.
 
 
 ## Contributing
