@@ -17,7 +17,7 @@ class MealsController < ApplicationController
         if @meal.save
           redirect to "/meals/#{@meal.id}"
         else
-          redirect to "/meals/new"
+          redirect to "/meals"
         end
       end
     else
@@ -36,7 +36,7 @@ class MealsController < ApplicationController
   delete '/meals/delete' do
     if logged_in?
       @current_user.meals.each { |meal| meal.destroy }
-      erb :'meals/meals'
+      redirect to '/meals'
     else
       redirect to '/login'
     end
