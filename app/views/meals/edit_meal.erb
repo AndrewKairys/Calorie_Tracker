@@ -2,7 +2,7 @@
 
 <form method="POST" action="/meals/<%=@meal.id%>">
   <input type="hidden" name="_method" value="PATCH">
-  <input type="text" name="name" value="<%= @meal.name %>" pattern="^[a-zA-Z]+$">
+  <input type="text" name="name" value="<%= @meal.name %>" pattern="^[a-zA-Z]+$" autofocus>
   <input type="number" name="calories" value="<%= @meal.calories %>" pattern="[0-9]">
   <input type="submit" value="submit">
 </form>
