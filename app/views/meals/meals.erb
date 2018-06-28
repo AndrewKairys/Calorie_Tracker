@@ -1,10 +1,6 @@
 <h1> Meals </h1>
+<a href="/meals/create_meal"> Add a Meal!</a>
 
-<% if !@meals %>
-  <a href="/meals/create_meal">
-    Create your first meal!
-  </a>
-<% else %>
 <% @meals.each do |meal| %>
   <div>
     <a href="meals/<%= meal.id %>"><%= meal.name %></a>: <%= meal.calories %> kcals
@@ -18,4 +14,3 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete All Meals">
   </form>
-<% end %>
