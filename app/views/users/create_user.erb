@@ -1,15 +1,15 @@
 <h2>Users</h2>
 
 <% unless locals.empty? %>
-  <%= message %>
+  <p color="red"><%= message %></p>
 <% end %>
 
 
 <h3>Sign Up</h3>
 <form method="POST" action="/signup">
-  <p>Username: <input type="text" name="username" autofocus></p>
-  <p>Email: <input type="text" name="email"></p>
-  <p>Password: <input type="text" name="password"></p>
-  <p>Daily Calories: <input type="number" step="50" name="daily_calories"></p>
+  <p>Username: <input type="text" name="username" autofocus required></p>
+  <p>Email: <input type="text" name="email" required></p>
+  <p>Password: <input type="text" name="password" required></p>
+  <p>Daily Calories: <input type="number" step="50" name="daily_calories" required></p>
   <input class="btn btn-secondary" type="submit">
 </form>
