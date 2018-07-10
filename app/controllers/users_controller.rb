@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:daily_calories] == ""
-      redirect to '/signup'
+    if User.find_by(username: params[:username])
+      erb :'users/create_user', locals: {message: "Please choose a different username!"}
     else
       @user = User.new(:username => params[:username], :email => params[:email],
         :password => params[:password], :daily_calories => params[:daily_calories])
